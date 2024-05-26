@@ -1,0 +1,4 @@
+SELECT *
+FROM book
+ORDER BY avg_star DESC
+LIMIT 6;
