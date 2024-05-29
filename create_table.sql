@@ -6,11 +6,7 @@ CREATE TABLE "books" (
   "status" integer,
   "publish_year" timestamp,
   "publishing_house" varchar,
-  "book_file" varchar,
   "avg_star" integer,
-  "book_cover" varchar,
-  "total_chapter" integer,
-  "book_description" varchar,
   "author_id" integer,
   "staff_id" integer
 );
