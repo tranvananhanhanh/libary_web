@@ -1,0 +1,10 @@
+update "re"
+set "reserve_date" = "return_date",
+	"return_date" = "reserve_date"
+where "reserve_date" > "return_date";
+
+update "re"
+set "due" = "reserve_date" + interval '60 days';
+
+select *
+from "re";
