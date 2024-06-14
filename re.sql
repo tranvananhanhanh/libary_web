@@ -1018,4 +1018,4 @@ set due = reserve_date + interval '60 days';
 
 update re 
 set return_date = NULL
-where reserver_date > '2024-05-01';
+where reserve_date > '2024-05-01';
