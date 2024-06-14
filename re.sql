@@ -1005,3 +1005,17 @@ insert into re (book_id, user_id, reserve_date, return_date, due) values (314, 7
 insert into re (book_id, user_id, reserve_date, return_date, due) values (727, 456, '2023-10-24', '2024-02-16', '2023-07-08');
 insert into re (book_id, user_id, reserve_date, return_date, due) values (843, 836, '2024-04-17', '2023-08-01', '2023-12-25');
 insert into re (book_id, user_id, reserve_date, return_date, due) values (136, 663, '2023-08-06', '2023-09-20', '2023-11-26');
+
+
+
+update re
+set reserve_date = return_date,
+	return_date = reserve_date
+where reserve_date > return_date;
+
+update re
+set due = reserve_date + interval '60 days';
+
+update re 
+set return_date = NULL
+where reserver_date > '2024-05-01';
