@@ -26,3 +26,10 @@ ALTER table re
 ADD CONSTRAINT re_user_id_fkey FOREIGN key (user_id)
 REFERENCES users(user_id);
 
+ALTER TABLE read
+ADD CONSTRAINT read_user_id_fkey FOREIGN KEY (user_id)
+REFERENCES users(user_id);
+
+ALTER TABLE read
+ADD CONSTRAINT read_book_id_fkey FOREIGN KEY (book_id)
+REFERENCES book(book_id);
