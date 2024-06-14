@@ -9,7 +9,7 @@ $$
 LANGUAGE plpgsql;
 
 
---select total_book();
+-- select total_book();
 
 -- kiểm tra xem sách có sẵn sàng cho mượn hay không
 
@@ -40,3 +40,55 @@ LANGUAGE plpgsql;
 -- select reserving(240);
 
 
+-- trả về list sách người dùng đang mượn
+
+
+CREATE or REPLACE FUNCTION reserving_list(in id integer)
+RETURNS TABLE (book_id integer, title VARCHAR, soluong int)
+as $$
+BEGIN
+    RETURN query
+    select book.book_id, book.title, count(re.book_id)::integer as soluong
+    from book
+    join re on book.book_id = re.book_id
+    where re.user_id = id
+    group by book.book_id;
+END;
+$$
+LANGUAGE plpgsql;
+
+-- select reserving_list(240);
+
+
+-- tìm sách theo tên tác giả
+
+CREATE or REPLACE FUNCTION find_books_by_author(author_name VARCHAR) RETURNS TABLE (id INT, title VARCHAR, genre varchar) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT book.book_id, book.title, book.genre
+    from book
+    join author on book.author_id = author.author_id
+    where author.name = author_name;
+END;
+$$ LANGUAGE plpgsql;
+
+
+-- select find_books_by_author('Roz Tuiller');
+
+
+-- tìm sách theo thể loại
+
+
+CREATE or REPLACE FUNCTION find_books_by_genre(book_genre VARCHAR) RETURNS TABLE (id INT, title VARCHAR, author VARCHAR) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT book.book_id, book.title, author.name
+    from book
+    join author on book.author_id = author.author_id
+    where book.genre = book_genre
+    order by book.book_id;
+END;
+$$ LANGUAGE plpgsql;
+
+
+-- select find_books_by_genre('sci-fi');
