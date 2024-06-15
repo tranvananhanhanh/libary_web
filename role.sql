@@ -11,7 +11,6 @@ GRANT SELECT,INSERT ON read TO UserRole;
 GRANT INSERT, UPDATE ON staff TO StaffRole;
 GRANT SELECT,INSERT,UPDATE,DELETE ON books,re,report,authors TO StaffRole;
 GRANT SELECT ON users TO StaffRole;
-SELECT * FROM users
 
 
 
