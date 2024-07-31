@@ -17,16 +17,13 @@ The Library Management System aims to streamline library operations, making it e
 
 To install and set up the project, follow these steps:
 
-Clone the repository:
-    ```bash
-    git clone
-    https://github.com/yourusername/library-management-system.git
+Clone the repository for FE&BE of web:
     https://github.com/tranvananhanhanh/staff_libaryweb
     
-    ```
 
 
-## This is web will look like this:
-
+## Screenshots 
+ Our report (you can see the our demo web) :
+https://docs.google.com/presentation/d/1LNUyl_Puqqt6v5ybEC9Pvoe2CKFmk6Fd549-5ZsICvA/edit#slide=id.g2e6555046cb_0_52
 
 
